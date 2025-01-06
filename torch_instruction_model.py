@@ -10,6 +10,11 @@ import torch.distributed as dist
 from torch.nn.parallel import DistributedDataParallel as DDP
 import gc
 
+#
+# to run on multiple GPUs, use
+# torchrun --nproc_per_node=4 --master_port=2023 your_script.py
+#
+
 # need a permanent solution for this
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 
@@ -20,7 +25,7 @@ os.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'expandable_segments:True'
 cache_dir = "C:/Users/MahtabSarwar/.cache/huggingface"
  
 # Set your Hugging Face API token
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = ""
 os.environ["HF_HOME"] = cache_dir
 os.environ["HF_DATASETS_CACHE"] = cache_dir
 os.environ["HF_MODULES_CACHE"] = cache_dir
